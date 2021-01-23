@@ -21,18 +21,22 @@ const people = [
 ]
 
 const initialState = {
-  people: people,
+  peopleList: people,
   filterQuery: ''
 };
 
 export default function browse(state = initialState, action) {
   switch (action.type) {
 
-    // this is an example
-    case types.DO_NOTHING:
-      return state;
+    case types.FILTER:
+      state.peopleList = initialState.peopleList;
+      state.filterQuery = action.word;
 
-    // ...
+      const modifiedState = {
+        peopleList: state.peopleList.filter(person => person.name.toLowerCase().includes(state.filterQuery.trim().toLowerCase())),
+        filterQuery: state.filterQuery
+      }
+      return modifiedState;
 
     default:
       return state;
