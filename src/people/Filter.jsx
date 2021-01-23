@@ -15,7 +15,7 @@ class Filter extends Component {
   render() {
     return (
       <div className='App-box'>
-        {/* ... */}
+        <input type='text' ></input>
       </div>
     );
   }

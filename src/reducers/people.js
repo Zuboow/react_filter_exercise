@@ -21,18 +21,15 @@ const people = [
 ]
 
 const initialState = {
-  people: people,
+  peopleList: people,
   filterQuery: ''
 };
 
 export default function browse(state = initialState, action) {
   switch (action.type) {
 
-    // this is an example
-    case types.DO_NOTHING:
+    case types.FILTER:
       return state;
-
-    // ...
 
     default:
       return state;
