@@ -29,7 +29,14 @@ export default function browse(state = initialState, action) {
   switch (action.type) {
 
     case types.FILTER:
-      return state;
+      state.peopleList = initialState.peopleList;
+      state.filterQuery = action.word;
+
+      const modifiedState = {
+        peopleList: state.peopleList.filter(person => person.name.toLowerCase().includes(state.filterQuery.trim().toLowerCase())),
+        filterQuery: state.filterQuery
+      }
+      return modifiedState;
 
     default:
       return state;

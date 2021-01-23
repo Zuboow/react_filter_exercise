@@ -1,6 +1,6 @@
 import * as types from '../types/people';
 
-export const filter = (word) => ({
+export const filterPeople = (word) => ({
   type: types.FILTER,
-  word: word
+  word
 });
